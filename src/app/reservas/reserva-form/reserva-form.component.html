@@ -1,0 +1,62 @@
+<div class="dialog-content-wrapper">
+    <mat-toolbar matDialogTitle class="mat-accent m-0">
+       <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+          <span class="title dialog-title">{{dialogTitle}}</span>
+          <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">
+             <mat-icon>close</mat-icon>
+          </button>
+       </mat-toolbar-row>
+    </mat-toolbar>
+    <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+       <form [formGroup]="reservaForm" autocomplete="off">
+          <div class="mb-24" fxLayout="row" fxLayoutAlign="start start">
+             <mat-form-field fxFlex>
+                <input name="origen" formControlName="origen" matInput placeholder="Origen">
+                <mat-error>
+                  Requerido
+               </mat-error>
+             </mat-form-field>
+          </div>
+          <div class="mb-24" fxLayout="row" fxLayoutAlign="start start">
+            <mat-form-field fxFlex>
+               <input name="destino" formControlName="destino" matInput placeholder="Destino">
+               <mat-error>
+                  Requerido
+               </mat-error>
+            </mat-form-field>
+         </div>
+         <div class="mb-24" fxLayout="row" fxLayoutAlign="start start">
+            <mat-form-field fxFlex>
+               <input name="numeroDePasajeros" formControlName="numeroDePasajeros" matInput placeholder="Nº de pasajeros">
+               <mat-error>
+                  Requerido y numérico
+               </mat-error>
+            </mat-form-field>
+         </div>
+
+         <div class="mb-24" fxLayout="row" fxLayoutAlign="start start">
+            <mat-form-field fxFlex>
+               <input name="fecha" formControlName="fecha" matInput placeholder="Fecha">
+               <mat-error>
+                  Requerido y formato dd/mm/yyyy
+               </mat-error>
+            </mat-form-field>
+         </div>
+
+         <div class="mb-24" fxLayout="row" fxLayoutAlign="start start">
+            <mat-form-field fxFlex>
+               <input name="hora" formControlName="hora" matInput placeholder="Hora">
+               <mat-error>
+                  Requerido y formato HH:MM
+               </mat-error>
+            </mat-form-field>
+         </div>
+       </form>
+    </div>
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+       <button *ngIf="action ==='new'" mat-raised-button (click)="matDialogRef.close(reservaForm)"
+       class="save-button mat-accent" [disabled]="reservaForm.invalid" aria-label="SAVE">
+       AGREGAR
+       </button>
+    </div>
+ </div>

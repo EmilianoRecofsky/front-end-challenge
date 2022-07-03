@@ -1,0 +1,15 @@
+<h1 matDialogTitle>Información</h1>
+<div mat-dialog-content>
+Recuerda que <b>NO</b> es conveniente realizar esta acción de manera masiva. 
+<br>
+Si se “invade” a los usuarios con notificaciones masivas es probable que el servicio de notificaciones se vea afectado, penalizado y consecuentemente podría generar que las notificaciones de la App dejen de funcionar.
+<br>
+Este módulo fue realizado para su uso en ocasiones especiales, como es dar aviso a los usuarios de un acontecimiento importante (como son las promociones).
+<br>
+<br>
+He leído las condiciones anteriores y yo usuario <b>{{nombreUsuario}}</b> me hago responsable de este particular envio masivo de notificaciones
+</div>
+<div mat-dialog-actions class="pt-24">
+    <button mat-raised-button class="mat-accent mr-16" (click)="dialogRef.close(true)">Aceptar y continuar</button>
+    <button mat-button (click)="dialogRef.close(false)">Cancelar</button>
+</div>

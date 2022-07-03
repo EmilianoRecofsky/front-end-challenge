@@ -1,0 +1,15 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/app",
+        "module": "es2015",
+        "skipLibCheck": true,// Para que funcione sat-popover
+    },
+    "exclude": [
+        "src/test.ts",
+        "**/*.spec.ts",
+        "testing", 
+        "setupJest.ts", 
+        "**/*.spec.ts"
+    ]
+}
